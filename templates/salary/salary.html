@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{%block title%}Salary{%endblock title%}
+
+{%block stylesheets%}
+{%load static%}
+<link rel="stylesheet" href={%static 'css/style.css'%}>
+<link rel="stylesheet" href={%static 'css/nhansu.css'%}>
+<link rel="stylesheet" href={%static 'css/index.css'%}>
+<link rel="stylesheet" href={%static 'css/tinhluong.css'%}>
+{%endblock stylesheets%}
+
+{%block content%}
+<!-- container begin -->
+<div class="col-container col-94">
+    <div class="container">
+        <!-- menu item container begin -->
+        <div class="container-item time-keeping-container">
+            <h1>Tính tiền lương</h1>
+            <div class="time-keeping-wrapped col-full">
+                <div class="col-half">
+                    <div class="employee-info">
+                        <div class="employee-info-img"></div>
+                        <div class="employee-about">
+                            <p class="employee-name">Nguyen Duy Hieu</p>
+                            <div class="employee-desc">
+                                <span class="employee-age">Age: 22</span>
+                                <span class="employee-position">Position: Truong phong</span>
+                            </div>
+                        </div>
+                        <div class="show-info">
+                            <span class="employee-show-info">
+                                <i class="ti-menu-alt"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-half">
+                    <div class="employee-info">
+                        <div class="employee-info-img"></div>
+                        <div class="employee-about">
+                            <p class="employee-name">Nguyen Duy Hieu</p>
+                            <div class="employee-desc">
+                                <span class="employee-age">Age: 22</span>
+                                <span class="employee-position">Position: Truong phong</span>
+                            </div>
+                        </div>
+                        <div class="show-info">
+                            <span class="employee-show-info">
+                                <i class="ti-menu-alt"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal">
+            <div class="modal-container">
+                <h2 class="modal-title">Tính lương</h2>
+                <div class="modal-body">
+                    <div class="modal-employee-doc">
+                        <div class="col-full">
+                            <div class="col-half">                                            
+                                <div class="modal-name">
+                                    <span>Họ và tên:</span>
+                                    <span>Nguyễn Duy Hiếu </span>
+                                </div>
+                                <div class="modal-birthday">
+                                    <span class="modal-birthday-title">Ngày, tháng, năm sinh: </span>
+                                    <span>04/01/2001</span>
+                                </div>
+                                <div class="modal-phone-number">
+                                    <span>Số điện thoại: </span>
+                                    <span>0979450816</span>
+                                </div>
+                                <div class="modal-position">
+                                    <span>Chức vụ: </span>
+                                    <span>Trưởng phòng</span>
+                                </div>
+                                <div class="modal-salary-wrapped">
+                                    <div class="modal-time">
+                                        <span>Tháng: </span>
+                                        <span>5</span>
+                                    </div>
+                                    <div class="modal-work-days">
+                                        <span>Số ngày công: </span>
+                                        <span>28</span>
+                                    </div>
+                                    <div class="modal-salary">
+                                        <span>Lương: </span>
+                                        <span>20.000.000</span>
+                                        <span>VND</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-half">
+                                <div class="modal-img"></div>
+                            </div>
+                        </div>
+                        <button class="close-btn btn">Đóng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- menu container end -->
+    </div>
+</div>
+<!-- container end -->
+{%endblock%}
+
+
+{%block javascripts%}
+    {%load static%}
+    <script src={%static 'js/main.js'%}></script>
+    <script src={%static 'js/tinhluong.js'%}></script>
+{%endblock javascripts%}

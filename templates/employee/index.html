@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}Employee{% endblock %}
+
+{%block stylesheets%}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'fonts/themify-icons/themify-icons.css' %}">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <link rel="stylesheet" href="{%static 'css/nhansu.css'%}">
+{%endblock stylesheets%}
+
+{%block content%}
+<div class="col-container col-94">
+    <div class="container">
+        <!-- menu item container begin -->
+        <div class="container-item employee-container-wrapped">
+            <ul class="employee-container-item-list">
+               <li class="employee-container-item active">Thông tin nhân  viên</li>
+               <li class="employee-container-item">Thêm nhân viên</li>
+               <li class="employee-container-item">Tìm kiếm nhân viên</li>
+            </ul>
+            <div class="employee-wrapped">
+                {%include 'employee/infor.html'%}
+                {%include 'employee/add.html'%}
+                {%include 'employee/search.html'%}
+            </div>
+        </div>
+        <!-- menu container end -->
+    </div>
+</div>
+<!-- container end -->
+{%include 'employee/modal.html'%}
+{%endblock content%}
+
+
+
+{%block javascripts%}
+    {%load static%}
+    <script src="{%static 'js/main.js'%}/"></script>
+    <script src="{%static 'js/nhansu.js'%}"></script>
+{%endblock javascripts%}
