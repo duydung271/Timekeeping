@@ -1,98 +1,54 @@
  <!-- them nhan vien -->
  <div class="employee-container-content-wrapped">
-    <form action="" class="employee-document">
+    <form action="" class="employee-document" method="POST" enctype="multipart/form-data" id="image_form">
+        {% csrf_token %}
         <h1 class="employee-document-title">Thông tin bản thân</h1>
         <div class="employee-new-container-wrapped">
             <div class="employee-new-info">
                 <div class="employee-new-name-gender">
                     <div class="employee-new-name">
                         <span>Họ và tên: </span>
-                        <input type="text" id="employee-new-name-input" placeholder="Ex: Nguyen Duy Hieu">
+                        {{add_form.name}}
                     </div>
                     <div class="employee-new-gender">
-                        <input type="radio" name="employee-new-gender" id="gender1"><span>Male</span>
-                        <input type="radio" name="employee-new-gender" id="gender2"><span>Female</span>
+                        {{add_form.gender}}
                     </div>
                 </div>
                 <div class="employee-new-birthday-hometown">
                     <div class="employee-new-birthday">
                         <span class="employee-new-birthday-title">Birthday: </span>
-                        <select name="birthday-days" id="select1">  
-                            <option value="1" class="birthday-day">1</option>
-                            <option value="2" class="birthday-day">2</option>
-                            <option value="3" class="birthday-day">3</option>
-                            <option value="4" class="birthday-day">4</option>
-                            <option value="5" class="birthday-day">5</option>
-                            <option value="6" class="birthday-day">6</option>
-                            <option value="7" class="birthday-day">7</option>
-                            <option value="8" class="birthday-day">8</option>
-                            <option value="9" class="birthday-day">9</option>
-                            <option value="10" class="birthday-day">10</option>
-                            <option value="11" class="birthday-day">11</option>
-                            <option value="12" class="birthday-day">12</option>
-                            <option value="13" class="birthday-day">13</option>
-                            <option value="14" class="birthday-day">14</option>
-                            <option value="15" class="birthday-day">15</option>
-                            <option value="16" class="birthday-day">16</option>
-                            <option value="17" class="birthday-day">17</option>
-                            <option value="18" class="birthday-day">18</option>
-                            <option value="19" class="birthday-day">19</option>
-                            <option value="20" class="birthday-day">20</option>
-                            <option value="21" class="birthday-day">21</option>
-                            <option value="22" class="birthday-day">22</option>
-                            <option value="23" class="birthday-day">23</option>
-                            <option value="24" class="birthday-day">24</option>
-                            <option value="25" class="birthday-day">25</option>
-                            <option value="26" class="birthday-day">26</option>
-                            <option value="27" class="birthday-day">27</option>
-                            <option value="28" class="birthday-day">28</option>
-                            <option value="29" class="birthday-day">29</option>
-                            <option value="30" class="birthday-day">30</option>
-                            <option value="31" class="birthday-day">31</option>
-                        </select>
-                        <select name="birthday-months" id="select2">
-                            <option value="1" class="birthday-month">1</option>
-                            <option value="2" class="birthday-month">2</option>
-                            <option value="3" class="birthday-month">3</option>
-                            <option value="4" class="birthday-month">4</option>
-                            <option value="5" class="birthday-month">5</option>
-                            <option value="6" class="birthday-month">6</option>
-                            <option value="7" class="birthday-month">7</option>
-                            <option value="8" class="birthday-month">8</option>
-                            <option value="9" class="birthday-month">9</option>
-                            <option value="10" class="birthday-month">10</option>
-                            <option value="11" class="birthday-month">11</option>
-                            <option value="12" class="birthday-month">12</option>
-                        </select>
-                        <select name="birthday-years" id="select3">
-                        </select>
+                        {{add_form.birthDay}}
                     </div>
                     <div class="employee-new-hometown">
                         <span>Nơi sinh: </span>
-                        <input type="text" id="employee-new-hometown-input">
+                        {{add_form.homeTown}}
                     </div>
                 </div>
                 <div class="employee-new-phone-number">
                     <span>Số điện thoại: </span>
-                    <input type="text" id="employee-new-phone-number-input">
+                    {{add_form.phone}}
                 </div>
                 <div class="employee-new-education">
                     <span>Trình độ: </span>
-                    <select name="education" id="select4">
-                        <option value="" class="employee-new-education"></option>
-                        <option value="Đại học" class="employee-new-education">Đại học</option>
-                        <option value="Cao đẳng" class="employee-new-education">Cao đẳng</option>
-                        <option value="Trung học phổ thông" class="employee-new-education">Trung học phổ thông</option>
-                    </select>
+                    {{add_form.educationLevel}}
                 </div>
 
             </div>
             <div class="employee-new-img-wrapped">
                 <div class="employee-new-img-upload"></div>
-                <label for="upload-img" class="upload-img-btn">Upload ảnh</label>
-                <input id="upload-img" type="file"></input>
+                {{add_form.avatar}}
             </div>
+            <img id="previewImg" src="/media/unkown.jpg" alt="Placeholder" width="256" height="256"></img>  
         </div>
         <button type="submit" class="submit-form-btn">Thêm nhân viên</button>
     </form>
 </div>
+
+<script>
+    imgInp.onchange = evt => {
+        const [file] = imgInp.files
+        if (file) {
+            previewImg.src = URL.createObjectURL(file)
+        }
+      }
+</script>

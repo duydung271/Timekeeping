@@ -16,146 +16,24 @@
     <div class="container">
         <!-- menu item container begin -->
         <div class="container-item home-container">
-            <!-- tin tuc start -->
-            <h1 class="home-container-title">Tin tức</h1>
-            <div class="home-container-slider">
-                <div class="home-container-slides">
-                    <!-- radio button start -->
-                    <input type="radio" name="radio-btn" id="radio1">
-                    <input type="radio" name="radio-btn" id="radio2">
-                    <input type="radio" name="radio-btn" id="radio3">
-                    <input type="radio" name="radio-btn" id="radio4">
-                    <!-- radio button end -->
-                    
-                    {%load static%}
-                    <!-- slide img start -->
-                    <div class="slide first">
-                        <img src="{%static 'img/slider/slider_1.jpg'%}" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="{%static 'img/slider/slider_2.jpg'%}" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="{%static 'img/slider/slider_3.jpg'%}" alt="">
-                    </div>
-                    <div class="slide">
-                        <img src="{%static 'img/slider/slider_4.jpg'%}" alt="">
-                    </div>
-                    <!-- slide img end -->
-                    <!-- navigation auto start -->
-                    <div class="navigation-auto">
-                        <div class="auto-btn1"></div>
-                        <div class="auto-btn2"></div>
-                        <div class="auto-btn3"></div>
-                        <div class="auto-btn4"></div>
-                    </div>
-                    <!-- navigation auto end -->
-                </div>
-                <!-- manual navigation start -->
-                <div class="navigation-manual">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
-                    <label for="radio4" class="manual-btn"></label>
-                </div>
-                <!-- manual navigation start -->
-            </div>
-            <!-- tin tuc end -->
            <!-- nhan su online start -->
            <div class="employee-onl-wrapped">
                <h1 class="employee-onl-titlle">Nhân viên đi làm</h1>
                 <div class="col-full">
                     <div class="col-half">
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status active"></span>
-                        </div>
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status active"></span>
-                        </div>
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status active"></span>
-                        </div>
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status active"></span>
-                        </div>
+                        {%for employee in employees%}
+                            {%if forloop.counter|divisibleby:2%}
+                            {%else%}
+                                {%include 'home/card_employee.html'%}
+                            {% endif %}
+                        {%endfor%}
                     </div>
                     <div class="col-half">
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status active"></span>
-                        </div>
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status"></span>
-                        </div>
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status"></span>
-                        </div>
-                        <div class="employee-info">
-                            <div class="employee-info-img"></div>
-                            <div class="employee-about">
-                                <p class="employee-name">Nguyen Duy Hieu</p>
-                                <div class="employee-desc">
-                                    <span class="employee-age">Age: 22</span>
-                                    <span class="employee-position">Position: Truong phong</span>
-                                </div>
-                            </div>
-                            <span class="employee-status"></span>
-                        </div>
+                        {%for employee in employees%}
+                            {%if forloop.counter|divisibleby:2%}
+                                {%include 'home/card_employee.html'%}
+                            {% endif %}
+                        {%endfor%}
                     </div>
                 </div>
            </div>

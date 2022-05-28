@@ -67,7 +67,7 @@
     width: 80px;
     height: 80px;
     border-radius: 5px;
-    background: url(../img/avatar/admin.jpg)  top center / cover no-repeat;
+    /* background: url(../img/avatar/admin.jpg)  top center / cover no-repeat; */
 }
 
 .employee-about {
@@ -281,9 +281,9 @@ input[type = "text"] {
     display: flex;
 }
 
-.employee-search-result {
+/* .employee-search-result {
     display: none;
-}
+} */
 
 .employee-search-result > span {
     display: block;
@@ -342,8 +342,8 @@ span.search-none {
 
 .modal-img {
     width: 160px;
-    height: 160px;
-    background: url(../img/avatar/admin.jpg)  top center / cover no-repeat;
+    height: 160px; 
+    /* background: url(../img/avatar/admin.jpg)  top center / cover no-repeat; */
 }
 
 .modal-employee-doc .col-full .col-half:nth-child(2) {
